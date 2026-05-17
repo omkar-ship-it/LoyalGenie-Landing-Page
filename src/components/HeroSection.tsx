@@ -82,7 +82,7 @@ export default function HeroSection() {
         </p>
 
         <div ref={ctaRef} style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-          <a href="#get-started" className="btn-gold" style={{ fontSize: '16px', padding: '15px 36px' }}>
+          <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ fontSize: '16px', padding: '15px 36px' }}>
             Add to Your Counter — Free
           </a>
           <a href="#how-it-works" className="btn-outline">

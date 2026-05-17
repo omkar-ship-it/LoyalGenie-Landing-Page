@@ -72,7 +72,7 @@ export default function Navbar() {
             onMouseLeave={e => (e.currentTarget.style.color = '#8b7db5')}>
             For Business
           </a>
-          <a href="#get-started" className="btn-gold" style={{ padding: '10px 24px', fontSize: '14px' }}>
+          <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ padding: '10px 24px', fontSize: '14px' }}>
             Get Started Free
           </a>
         </div>

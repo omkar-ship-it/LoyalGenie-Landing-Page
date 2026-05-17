@@ -65,15 +65,15 @@ export default function ForBusinesses() {
       const items = sectionRef.current?.querySelectorAll('.benefit-card')
       if (items?.length) {
         gsap.from(items, {
-          y: 40, opacity: 0, stagger: 0.12, duration: 0.7, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+          y: 25, opacity: 0, stagger: 0.05, duration: 0.4, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
         })
       }
       const bizItems = sectionRef.current?.querySelectorAll('.biz-chip')
       if (bizItems?.length) {
         gsap.from(bizItems, {
-          scale: 0.7, opacity: 0, stagger: 0.08, duration: 0.5, ease: 'back.out(1.8)',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+          scale: 0.85, opacity: 0, stagger: 0.04, duration: 0.35, ease: 'back.out(1.8)',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
         })
       }
     }, sectionRef)

@@ -37,8 +37,8 @@ export default function StatsBar() {
       const items = sectionRef.current?.querySelectorAll('.stat-item')
       if (!items?.length) return
       gsap.from(items, {
-        y: 30, opacity: 0, stagger: 0.15, duration: 0.7, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+        y: 20, opacity: 0, stagger: 0.06, duration: 0.4, ease: 'power2.out',
+        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
       })
     }, sectionRef)
     return () => ctx.revert()

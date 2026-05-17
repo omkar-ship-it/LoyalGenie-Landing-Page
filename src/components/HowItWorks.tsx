@@ -53,8 +53,8 @@ export default function HowItWorks() {
       const cards = sectionRef.current?.querySelectorAll('.step-card')
       if (!cards?.length) return
       gsap.from(cards, {
-        y: 50, opacity: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true, once: true },
+        y: 30, opacity: 0, stagger: 0.06, duration: 0.45, ease: 'power3.out',
+        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
       })
     }, sectionRef)
     return () => ctx.revert()

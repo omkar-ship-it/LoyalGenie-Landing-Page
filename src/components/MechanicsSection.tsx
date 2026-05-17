@@ -81,8 +81,8 @@ export default function MechanicsSection() {
       const cards = sectionRef.current?.querySelectorAll('.mechanic-card')
       if (!cards?.length) return
       gsap.from(cards, {
-        scale: 0.85, opacity: 0, stagger: 0.1, duration: 0.6, ease: 'back.out(1.5)',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+        scale: 0.92, opacity: 0, stagger: 0.05, duration: 0.4, ease: 'back.out(1.5)',
+        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
       })
     }, sectionRef)
     return () => ctx.revert()

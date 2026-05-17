@@ -21,8 +21,11 @@ export default function Footer() {
       </div>
 
       <div style={{ display: 'flex', gap: '32px' }}>
-        {[['How It Works', '#how-it-works'], ['Mechanics', '#mechanics'], ['For Business', '#for-business'], ['Pricing', '#get-started']].map(([link, href]) => (
-          <a key={link} href={href} style={{ color: '#8b7db5', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }}
+        {[['How It Works', '#how-it-works'], ['Mechanics', '#mechanics'], ['For Business', '#for-business'], ['Get Started', 'https://5ynjgqi81l5.typeform.com/to/acjV4XH4']].map(([link, href]) => (
+          <a key={link} href={href}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            style={{ color: '#8b7db5', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
             onMouseLeave={e => (e.currentTarget.style.color = '#8b7db5')}>
             {link as string}

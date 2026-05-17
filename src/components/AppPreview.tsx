@@ -42,15 +42,15 @@ export default function AppPreview() {
       const items = sectionRef.current?.querySelectorAll('.module-card')
       if (items?.length) {
         gsap.from(items, {
-          x: -40, opacity: 0, stagger: 0.15, duration: 0.7, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+          x: -25, opacity: 0, stagger: 0.06, duration: 0.4, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
         })
       }
       const phone = sectionRef.current?.querySelector('.phone-mockup')
       if (phone) {
         gsap.from(phone, {
-          x: 80, opacity: 0, duration: 1, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+          x: 50, opacity: 0, duration: 0.55, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
         })
       }
     }, sectionRef)

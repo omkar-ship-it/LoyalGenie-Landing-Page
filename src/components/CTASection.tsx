@@ -14,8 +14,8 @@ export default function CTASection() {
       const content = sectionRef.current?.querySelector('.cta-content')
       if (!content) return
       gsap.from(content, {
-        y: 50, opacity: 0, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+        y: 25, opacity: 0, duration: 0.45, ease: 'power3.out',
+        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
       })
     }, sectionRef)
     return () => ctx.revert()
@@ -63,10 +63,10 @@ export default function CTASection() {
         </p>
 
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="mailto:hello@loyalgenie.in" className="btn-gold" style={{ fontSize: '17px', padding: '16px 40px' }}>
+          <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ fontSize: '17px', padding: '16px 40px' }}>
             Get Your Free Standee →
           </a>
-          <a href="mailto:hello@loyalgenie.in" className="btn-outline" style={{ fontSize: '17px' }}>
+          <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ fontSize: '17px' }}>
             Talk to Founder
           </a>
         </div>
