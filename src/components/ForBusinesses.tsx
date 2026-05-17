@@ -1,0 +1,210 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { BarChart2, BellRing, Zap, Gamepad2, Smartphone, TrendingUp, QrCode, Gift, RefreshCw, type LucideIcon } from 'lucide-react'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const businesses = [
+  { icon: '💇', name: 'Salons & Spas' },
+  { icon: '☕', name: 'Cafes' },
+  { icon: '🍽️', name: 'Restaurants' },
+  { icon: '⛽', name: 'Service Stations' },
+  { icon: '🐾', name: 'Pet Clinics' },
+  { icon: '🏋️', name: 'Gyms' },
+  { icon: '🛍️', name: 'Retail Stores' },
+  { icon: '🏪', name: 'Any SME' },
+]
+
+const benefits: { Icon: LucideIcon; title: string; desc: string }[] = [
+  {
+    Icon: BarChart2,
+    title: 'Know Your Regulars',
+    desc: 'See exactly who your top customers are, how often they visit, and when they start drifting. End the guessing.',
+  },
+  {
+    Icon: BellRing,
+    title: 'Re-engage Silently Lost Customers',
+    desc: "A regular who hasn't visited in 30 days? Send them a targeted offer automatically. Bring them back before it's too late.",
+  },
+  {
+    Icon: Zap,
+    title: 'Zero Tech Headache',
+    desc: "No POS integration. No app development. Just a standee on your counter and a 5-minute setup. That's it.",
+  },
+  {
+    Icon: Gamepad2,
+    title: 'Gamified Experience',
+    desc: "Your customers don't just earn points — they play. Shake, spin, scratch, collect. Fun drives repeat visits.",
+  },
+  {
+    Icon: Smartphone,
+    title: 'Your Branded Loyalty App',
+    desc: "Your business lives inside LoyalGenie's app — with your name, logo, and offers. Professional loyalty without the price tag.",
+  },
+  {
+    Icon: TrendingUp,
+    title: 'Built for Slow Days',
+    desc: 'Run a flash offer on Tuesday afternoon. Push a mystery reward on a slow weekend. Turn empty hours into revenue.',
+  },
+]
+
+const standeeFlow: { Icon: LucideIcon; label: string }[] = [
+  { Icon: QrCode, label: 'Scan or Tap' },
+  { Icon: Gift, label: 'Win Rewards' },
+  { Icon: RefreshCw, label: 'Come Back' },
+]
+
+export default function ForBusinesses() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = sectionRef.current?.querySelectorAll('.benefit-card')
+      if (items?.length) {
+        gsap.from(items, {
+          y: 40, opacity: 0, stagger: 0.12, duration: 0.7, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+        })
+      }
+      const bizItems = sectionRef.current?.querySelectorAll('.biz-chip')
+      if (bizItems?.length) {
+        gsap.from(bizItems, {
+          scale: 0.7, opacity: 0, stagger: 0.08, duration: 0.5, ease: 'back.out(1.8)',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 90%', invalidateOnRefresh: true },
+        })
+      }
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
+  return (
+    <section id="for-business" ref={sectionRef} style={{ padding: '100px 80px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <div style={{
+            display: 'inline-block', background: 'rgba(240,192,64,0.1)',
+            border: '1px solid rgba(240,192,64,0.25)', borderRadius: '50px',
+            padding: '6px 18px', marginBottom: '20px',
+          }}>
+            <span style={{ color: '#f0c040', fontSize: '13px', fontWeight: 600 }}>FOR YOUR BUSINESS</span>
+          </div>
+          <h2 style={{
+            fontSize: 'clamp(32px, 4vw, 50px)', fontWeight: 900,
+            letterSpacing: '-1px', color: '#ffffff', lineHeight: 1.2, marginBottom: '16px',
+          }}>
+            What Starbucks has,{' '}
+            <span style={{ color: '#f0c040' }}>you can have too</span>
+          </h2>
+          <p style={{ color: '#8b7db5', fontSize: '17px', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7, marginBottom: '36px' }}>
+            Big brands know exactly who their regulars are, when they drift, and how to bring them back. LoyalGenie gives you the same power.
+          </p>
+
+          {/* Business type chips */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
+            {businesses.map((b, i) => (
+              <div key={i} className="biz-chip" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'rgba(26,11,75,0.6)', border: '1px solid rgba(240,192,64,0.15)',
+                borderRadius: '50px', padding: '8px 18px',
+                color: '#ffffff', fontSize: '14px', fontWeight: 500,
+                transition: 'all 0.2s ease', cursor: 'default',
+              }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = 'rgba(240,192,64,0.5)'
+                  e.currentTarget.style.background = 'rgba(26,11,75,0.9)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = 'rgba(240,192,64,0.15)'
+                  e.currentTarget.style.background = 'rgba(26,11,75,0.6)'
+                }}
+              >
+                <span>{b.icon}</span>
+                <span>{b.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Benefits grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          {benefits.map((b, i) => (
+            <div key={i} className="benefit-card card-glass" style={{ padding: '32px' }}>
+              <div style={{
+                width: '52px', height: '52px', borderRadius: '14px',
+                background: 'rgba(240,192,64,0.08)', border: '1px solid rgba(240,192,64,0.18)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginBottom: '18px',
+              }}>
+                <b.Icon size={22} color="#f0c040" strokeWidth={1.75} />
+              </div>
+              <h3 style={{ color: '#ffffff', fontSize: '18px', fontWeight: 700, marginBottom: '10px' }}>{b.title}</h3>
+              <p style={{ color: '#8b7db5', fontSize: '14px', lineHeight: 1.7 }}>{b.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Standee showcase */}
+        <div className="card-glass" style={{
+          marginTop: '60px',
+          display: 'grid', gridTemplateColumns: '1.1fr 0.9fr',
+          gap: '48px', alignItems: 'center', padding: '52px 60px',
+          background: 'linear-gradient(135deg, rgba(61,31,138,0.3), rgba(26,11,75,0.6))',
+        }}>
+          <div>
+            <div style={{ color: '#f0c040', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', marginBottom: '16px' }}>
+              ONE TAP. INFINITE REWARDS.
+            </div>
+            <h3 style={{
+              fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 900,
+              letterSpacing: '-0.5px', color: '#ffffff', lineHeight: 1.2, marginBottom: '20px',
+            }}>
+              The standee that works while you work
+            </h3>
+            <p style={{ color: '#8b7db5', fontSize: '16px', lineHeight: 1.7, marginBottom: '32px' }}>
+              Place it on your counter. Customers see it. They scan. They play. You get their contact, their loyalty, and their return visit — automatically.
+            </p>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0' }}>
+              {standeeFlow.map((f, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <div style={{
+                      width: '48px', height: '48px', borderRadius: '12px',
+                      background: 'rgba(240,192,64,0.12)', border: '1px solid rgba(240,192,64,0.25)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      <f.Icon size={22} color="#f0c040" strokeWidth={1.75} />
+                    </div>
+                    <div style={{ color: '#f0c040', fontSize: '13px', fontWeight: 600 }}>{f.label}</div>
+                  </div>
+                  {i < standeeFlow.length - 1 && (
+                    <div style={{
+                      color: 'rgba(240,192,64,0.4)', fontSize: '18px',
+                      lineHeight: '48px', padding: '0 14px',
+                    }}>→</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Standee mockup */}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/standee.png"
+              alt="LoyalGenie Standee"
+              style={{
+                height: '380px', objectFit: 'contain',
+                filter: 'drop-shadow(0 20px 60px rgba(107,63,212,0.5))',
+                animation: 'float 5s ease-in-out infinite',
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
