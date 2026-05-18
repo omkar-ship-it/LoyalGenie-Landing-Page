@@ -47,11 +47,18 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid rgba(240,192,64,0.1)' : 'none',
       }}>
         {/* Logo */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '24px' }}>🧞</span>
-          <span style={{ fontSize: '22px', fontWeight: 800, letterSpacing: '-0.5px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{
+            width: '40px', height: '40px', borderRadius: '12px',
+            background: 'linear-gradient(135deg, #3d1f8a, #6b3fd4)',
+            border: '1px solid rgba(240,192,64,0.35)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 0 16px rgba(107,63,212,0.5)',
+            fontSize: '22px',
+          }}>🧞</div>
+          <span style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-0.5px' }}>
             <span style={{ color: '#ffffff' }}>Loyal</span>
-            <span style={{ color: '#f0c040' }}>Genie</span>
+            <span className="shimmer-gold">Genie</span>
           </span>
         </div>
 

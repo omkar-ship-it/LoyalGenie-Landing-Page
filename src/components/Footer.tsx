@@ -9,10 +9,16 @@ export default function Footer() {
       display: 'flex', justifyContent: 'space-between', alignItems: 'center',
       flexWrap: 'wrap', gap: '24px',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <span style={{ fontSize: '22px' }}>🧞</span>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{
+          width: '36px', height: '36px', borderRadius: '10px',
+          background: 'linear-gradient(135deg, #3d1f8a, #6b3fd4)',
+          border: '1px solid rgba(240,192,64,0.3)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontSize: '20px',
+        }}>🧞</div>
         <div>
-          <div style={{ fontSize: '18px', fontWeight: 800 }}>
+          <div style={{ fontSize: '20px', fontWeight: 900, letterSpacing: '-0.5px' }}>
             <span style={{ color: '#ffffff' }}>Loyal</span>
             <span style={{ color: '#f0c040' }}>Genie</span>
           </div>
