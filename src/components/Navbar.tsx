@@ -58,7 +58,15 @@ export default function Navbar() {
           }}>🧞</div>
           <span style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-0.5px' }}>
             <span style={{ color: '#ffffff' }}>Loyal</span>
-            <span className="shimmer-gold">Genie</span>
+            <span style={{ position: 'relative' }}>
+              <span className="shimmer-gold">Genie</span>
+              <span aria-hidden style={{
+                position: 'absolute', top: '-10px', left: '62%',
+                transform: 'translateX(-50%)',
+                fontSize: '8px', color: '#f0c040',
+                letterSpacing: '2px', whiteSpace: 'nowrap',
+              }}>✦✦✦</span>
+            </span>
           </span>
         </div>
 

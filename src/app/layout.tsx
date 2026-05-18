@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LoyalGenie — Magical Loyalty for Your Business",
   description: "Turn every visit into a reward. LoyalGenie gives SMEs a smart, gamified loyalty platform. Shake it. Win it. Keep customers coming back.",
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
 };
 
 export default function RootLayout({
