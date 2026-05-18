@@ -199,7 +199,7 @@ body {
   .hero-grid      { grid-template-columns: 1fr !important; }
   .hero-scene-wrap { height: 420px !important; }
   .hero-float-card { display: none !important; }
-  .hero-tagline   { top: -60px !important; font-size: 16px !important; }
+  .hero-tagline   { display: none !important; }
 
   .stats-grid     { grid-template-columns: repeat(2, 1fr) !important; }
 
