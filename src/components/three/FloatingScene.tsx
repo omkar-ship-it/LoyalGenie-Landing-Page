@@ -7,10 +7,10 @@ import * as THREE from 'three'
 
 type Phase = 'app' | 'shake' | 'reveal'
 
-const CYCLE = 9        // seconds per full loop
+const CYCLE       = 14   // seconds per full loop
 const SHAKE_START = 2.5
-const SHAKE_END = 3.3
-const REVEAL_END = 7.5
+const SHAKE_END   = 5.2  // 2.7s shake — long enough to feel satisfying
+const REVEAL_END  = 11.5 // plenty of time to read the reward
 
 // ─── Normal app screen ────────────────────────────────────────────────────────
 
@@ -174,17 +174,30 @@ function Phone() {
     }
 
     if (newPhase === 'shake') {
-      // Rapid oscillation with a smooth attack/decay envelope
-      const progress = (ct - SHAKE_START) / (SHAKE_END - SHAKE_START)
-      const envelope = Math.sin(progress * Math.PI)
-      groupRef.current.rotation.z = Math.sin(t * 46) * 0.28 * envelope
-      groupRef.current.rotation.x = Math.cos(t * 39) * 0.12 * envelope
-      groupRef.current.position.x = Math.sin(t * 43) * 0.18 * envelope
+      const progress = (ct - SHAKE_START) / (SHAKE_END - SHAKE_START) // 0→1
+
+      // Smooth plateau envelope: ramp up → full intensity → ramp down
+      const raw = progress < 0.18 ? progress / 0.18
+                : progress > 0.82 ? (1 - progress) / 0.18
+                : 1
+      const envelope = raw * raw * (3 - 2 * raw) // smoothstep — no sharp edges
+
+      // Natural hand-shake frequency ~3.5 Hz with a harmonic for texture
+      const f = 22
+      groupRef.current.rotation.z =
+        (Math.sin(t * f) * 0.22 + Math.sin(t * f * 1.65 + 0.6) * 0.05) * envelope
+      groupRef.current.rotation.x =
+        Math.sin(t * (f * 0.82) + 1.1) * 0.09 * envelope
+      groupRef.current.position.x =
+        (Math.sin(t * f + 0.4) * 0.16 + Math.sin(t * f * 2.2) * 0.03) * envelope
+      groupRef.current.position.y =
+        Math.abs(Math.sin(t * f * 1.4)) * 0.045 * envelope
     } else {
-      // Smoothly return to rest — Float handles ambient bobbing
-      groupRef.current.rotation.z = THREE.MathUtils.lerp(groupRef.current.rotation.z, 0, 0.12)
-      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, 0, 0.08)
-      groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, 0, 0.12)
+      // Springy return — low lerp factor gives a satisfying settle
+      groupRef.current.rotation.z = THREE.MathUtils.lerp(groupRef.current.rotation.z, 0, 0.07)
+      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, 0, 0.05)
+      groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, 0, 0.07)
+      groupRef.current.position.y = THREE.MathUtils.lerp(groupRef.current.position.y, 0, 0.07)
     }
   })
 
