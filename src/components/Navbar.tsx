@@ -26,11 +26,11 @@ export default function Navbar() {
         borderBottom: '1px solid rgba(240,192,64,0.2)',
         backdropFilter: 'blur(12px)',
       }}>
-        <div style={{ width: '32px', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(240,192,64,0.6))' }} />
-        <span className="shimmer-gold" style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '2px' }}>
+        <div className="announce-line" style={{ width: '32px', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(240,192,64,0.6))' }} />
+        <span className="shimmer-gold announce-text" style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '2px' }}>
           SHAKE IT &amp; WIN IT
         </span>
-        <div style={{ width: '32px', height: '1px', background: 'linear-gradient(90deg, rgba(240,192,64,0.6), transparent)' }} />
+        <div className="announce-line" style={{ width: '32px', height: '1px', background: 'linear-gradient(90deg, rgba(240,192,64,0.6), transparent)' }} />
       </div>
 
       {/* Main nav */}
@@ -48,7 +48,7 @@ export default function Navbar() {
       }}>
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div style={{
+          <div className="nav-logo-icon" style={{
             width: '40px', height: '40px', borderRadius: '12px',
             background: 'linear-gradient(135deg, #3d1f8a, #6b3fd4)',
             border: '1px solid rgba(240,192,64,0.35)',
@@ -56,7 +56,7 @@ export default function Navbar() {
             boxShadow: '0 0 16px rgba(107,63,212,0.5)',
             fontSize: '22px',
           }}>🧞</div>
-          <span style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-0.5px' }}>
+          <span className="nav-logo-text" style={{ fontSize: '26px', fontWeight: 900, letterSpacing: '-0.5px' }}>
             <span style={{ color: '#ffffff' }}>Loyal</span>
             <span style={{ position: 'relative' }}>
               <span className="shimmer-gold">Genie</span>

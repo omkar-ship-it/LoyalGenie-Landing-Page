@@ -57,11 +57,11 @@ export default function HeroSection() {
         {/* Headline */}
         <div ref={headlineRef}>
           <h1 style={{
-            fontSize: 'clamp(42px, 5vw, 68px)',
+            fontSize: 'clamp(34px, 4.2vw, 58px)',
             fontWeight: 900,
             lineHeight: 1.15,
             letterSpacing: '-1.5px',
-            marginBottom: '28px',
+            marginBottom: '24px',
           }}>
             <span style={{ color: '#ffffff' }}>Loyalty</span>{' '}
             <span className="shimmer-gold">Granted.</span>
@@ -72,20 +72,20 @@ export default function HeroSection() {
         </div>
 
         <p ref={subRef} style={{
-          fontSize: '18px',
+          fontSize: '16px',
           color: '#8b7db5',
           lineHeight: 1.7,
           maxWidth: '480px',
-          marginBottom: '40px',
+          marginBottom: '36px',
         }}>
           Give your salon, cafe, or shop a gamified loyalty platform. Customers scan, shake their phone, and win rewards — while you build a base of loyal regulars.
         </p>
 
         <div ref={ctaRef} style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-          <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ fontSize: '16px', padding: '15px 36px' }}>
+          <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ fontSize: '15px', padding: '12px 28px' }}>
             Add to Your Counter — Free
           </a>
-          <a href="#how-it-works" className="btn-outline">
+          <a href="#how-it-works" className="btn-outline" style={{ fontSize: '15px', padding: '11px 28px' }}>
             See How It Works
           </a>
         </div>

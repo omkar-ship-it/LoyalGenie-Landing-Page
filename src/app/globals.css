@@ -185,6 +185,17 @@ body {
   .cta-section    { padding: 64px 20px !important; }
   .footer-main    { padding: 36px 20px !important; flex-direction: column !important; text-align: center !important; }
 
+  /* Nav */
+  .nav-main       { padding: 10px 20px !important; }
+  .nav-links-wrapper { display: none !important; }
+  .nav-cta-mobile { display: flex !important; }
+  .nav-logo-icon  { width: 34px !important; height: 34px !important; font-size: 18px !important; }
+  .nav-logo-text  { font-size: 20px !important; }
+
+  /* Announcement bar */
+  .announce-line  { display: none !important; }
+  .announce-text  { font-size: 11px !important; letter-spacing: 1px !important; }
+
   .hero-grid      { grid-template-columns: 1fr !important; }
   .hero-scene-wrap { height: 420px !important; }
   .hero-float-card { display: none !important; }
@@ -202,9 +213,6 @@ body {
 
   .app-grid       { grid-template-columns: 1fr !important; gap: 40px !important; }
   .app-phone-wrap { justify-content: center !important; }
-
-  .nav-links-wrapper { display: none !important; }
-  .nav-cta-mobile { display: flex !important; }
 }
 
 /* Small mobile (≤480px) */
