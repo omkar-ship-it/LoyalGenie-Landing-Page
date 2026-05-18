@@ -96,7 +96,7 @@ export default function HeroSection() {
       <div className="hero-scene-wrap" style={{ position: 'relative', height: '600px' }}>
         {/* Shake It & Win It tagline */}
         <div className="hero-tagline" style={{
-          position: 'absolute', top: '-84px', left: 0, right: 0,
+          position: 'absolute', top: '-30px', left: 0, right: 0,
           textAlign: 'center', zIndex: 5, pointerEvents: 'none',
         }}>
           <span className="shimmer-gold" style={{
@@ -114,7 +114,7 @@ export default function HeroSection() {
 
         {/* Card: top left — Double Points */}
         <div className="hero-float-card" style={{
-          position: 'absolute', top: '30px', left: '-20px',
+          position: 'absolute', top: '30px', left: '-120px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(240,192,64,0.25)', borderRadius: '16px',
           padding: '14px 18px', zIndex: 10,
@@ -131,7 +131,7 @@ export default function HeroSection() {
 
         {/* Card: mid left — Complimentary Service */}
         <div className="hero-float-card" style={{
-          position: 'absolute', top: '240px', left: '-15px',
+          position: 'absolute', top: '240px', left: '-115px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(22,160,133,0.35)', borderRadius: '16px',
           padding: '14px 18px', zIndex: 10,
@@ -148,7 +148,7 @@ export default function HeroSection() {
 
         {/* Card: bottom left — ₹50 off */}
         <div className="hero-float-card" style={{
-          position: 'absolute', bottom: '100px', left: '-20px',
+          position: 'absolute', bottom: '100px', left: '-120px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(240,192,64,0.25)', borderRadius: '16px',
           padding: '14px 18px', zIndex: 10,
