@@ -1,11 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useState } from 'react'
 import { Award, RotateCw, Ticket, Package, Smartphone, CreditCard, LayoutGrid, Crown, type LucideIcon } from 'lucide-react'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const mechanics: {
   Icon: LucideIcon
@@ -73,23 +69,10 @@ const mechanics: {
 ]
 
 export default function MechanicsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(4)
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = sectionRef.current?.querySelectorAll('.mechanic-card')
-      if (!cards?.length) return
-      gsap.from(cards, {
-        scale: 0.92, opacity: 0, stagger: 0.05, duration: 0.4, ease: 'back.out(1.5)',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-      })
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section id="mechanics" ref={sectionRef} style={{
+    <section id="mechanics" style={{
       padding: '100px 80px',
       background: 'rgba(26,11,75,0.25)',
       borderTop: '1px solid rgba(240,192,64,0.07)',

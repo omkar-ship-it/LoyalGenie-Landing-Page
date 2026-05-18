@@ -1,11 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { BarChart2, BellRing, Zap, Gamepad2, Smartphone, TrendingUp, QrCode, Gift, RefreshCw, type LucideIcon } from 'lucide-react'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const businesses = [
   { icon: '💇', name: 'Salons & Spas' },
@@ -58,30 +53,8 @@ const standeeFlow: { Icon: LucideIcon; label: string }[] = [
 ]
 
 export default function ForBusinesses() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = sectionRef.current?.querySelectorAll('.benefit-card')
-      if (items?.length) {
-        gsap.from(items, {
-          y: 25, opacity: 0, stagger: 0.05, duration: 0.4, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-        })
-      }
-      const bizItems = sectionRef.current?.querySelectorAll('.biz-chip')
-      if (bizItems?.length) {
-        gsap.from(bizItems, {
-          scale: 0.85, opacity: 0, stagger: 0.04, duration: 0.35, ease: 'back.out(1.8)',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-        })
-      }
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section id="for-business" ref={sectionRef} style={{ padding: '100px 80px' }}>
+    <section id="for-business" style={{ padding: '100px 80px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>

@@ -1,11 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Settings, QrCode, UserCheck, Smartphone, RefreshCw } from 'lucide-react'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const steps = [
   {
@@ -46,22 +41,8 @@ const steps = [
 ]
 
 export default function HowItWorks() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = sectionRef.current?.querySelectorAll('.step-card')
-      if (!cards?.length) return
-      gsap.from(cards, {
-        y: 30, opacity: 0, stagger: 0.06, duration: 0.45, ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-      })
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section id="how-it-works" ref={sectionRef} style={{ padding: '100px 80px' }}>
+    <section id="how-it-works" style={{ padding: '100px 80px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>

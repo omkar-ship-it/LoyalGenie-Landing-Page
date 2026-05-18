@@ -1,10 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const stats = [
   {
@@ -30,22 +25,8 @@ const stats = [
 ]
 
 export default function StatsBar() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = sectionRef.current?.querySelectorAll('.stat-item')
-      if (!items?.length) return
-      gsap.from(items, {
-        y: 20, opacity: 0, stagger: 0.06, duration: 0.4, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-      })
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <div ref={sectionRef} style={{
+    <div style={{
       background: 'rgba(26,11,75,0.4)',
       borderTop: '1px solid rgba(240,192,64,0.1)',
       borderBottom: '1px solid rgba(240,192,64,0.1)',

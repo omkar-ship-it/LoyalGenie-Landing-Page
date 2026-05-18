@@ -1,11 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Home, Search, Wallet, User, type LucideIcon } from 'lucide-react'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const modules: { Icon: LucideIcon; name: string; desc: string; color: string }[] = [
   {
@@ -35,35 +30,13 @@ const modules: { Icon: LucideIcon; name: string; desc: string; color: string }[]
 ]
 
 export default function AppPreview() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = sectionRef.current?.querySelectorAll('.module-card')
-      if (items?.length) {
-        gsap.from(items, {
-          x: -25, opacity: 0, stagger: 0.06, duration: 0.4, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-        })
-      }
-      const phone = sectionRef.current?.querySelector('.phone-mockup')
-      if (phone) {
-        gsap.from(phone, {
-          x: 50, opacity: 0, duration: 0.55, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-        })
-      }
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
   return (
     <section style={{
       padding: '100px 80px',
       background: 'rgba(26,11,75,0.2)',
       borderTop: '1px solid rgba(240,192,64,0.07)',
     }}>
-      <div ref={sectionRef} style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
 
         {/* Left — modules */}
         <div>

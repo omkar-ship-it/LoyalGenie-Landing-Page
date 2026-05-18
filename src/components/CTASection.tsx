@@ -1,28 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 export default function CTASection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const content = sectionRef.current?.querySelector('.cta-content')
-      if (!content) return
-      gsap.from(content, {
-        y: 25, opacity: 0, duration: 0.45, ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top bottom', invalidateOnRefresh: true, once: true },
-      })
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section id="get-started" ref={sectionRef} style={{
+    <section id="get-started" style={{
       padding: '120px 80px',
       position: 'relative', overflow: 'hidden',
     }}>
