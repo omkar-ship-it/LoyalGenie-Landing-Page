@@ -20,15 +20,7 @@ export default function Footer() {
         <div>
           <div style={{ fontSize: '20px', fontWeight: 900, letterSpacing: '-0.5px' }}>
             <span style={{ color: '#ffffff' }}>Loyal</span>
-            <span style={{ position: 'relative' }}>
-              <span style={{ color: '#f0c040' }}>Genie</span>
-              <span aria-hidden style={{
-                position: 'absolute', top: '-8px', left: '62%',
-                transform: 'translateX(-50%)',
-                fontSize: '7px', color: '#f0c040',
-                letterSpacing: '2px', whiteSpace: 'nowrap',
-              }}>✦✦✦</span>
-            </span>
+            <span style={{ color: '#f0c040' }}>Genie</span>
           </div>
           <div style={{ color: '#8b7db5', fontSize: '12px' }}>Magical Interaction for Businesses</div>
         </div>

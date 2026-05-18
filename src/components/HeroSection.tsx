@@ -90,23 +90,6 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* Social proof */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginTop: '40px' }}>
-          <div style={{ display: 'flex' }}>
-            {['🏪','☕','💇','🐾','🏋️'].map((emoji, i) => (
-              <div key={i} style={{
-                width: '36px', height: '36px', borderRadius: '50%',
-                background: '#1a0b4b', border: '2px solid #0a0520',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '16px', marginLeft: i > 0 ? '-10px' : '0',
-              }}>{emoji}</div>
-            ))}
-          </div>
-          <div>
-            <div style={{ color: '#f0c040', fontWeight: 700, fontSize: '14px' }}>50+ businesses</div>
-            <div style={{ color: '#8b7db5', fontSize: '13px' }}>already earning repeat visits</div>
-          </div>
-        </div>
       </div>
 
       {/* Right — 3D Scene */}
