@@ -157,3 +157,59 @@ body {
 /* GSAP initial states */
 .gsap-fade-up { opacity: 0; transform: translateY(40px); }
 .gsap-fade-in { opacity: 0; }
+
+/* ====== RESPONSIVE SYSTEM ====== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .hero-section   { padding: 140px 48px 60px !important; }
+  .section-main   { padding: 80px 48px !important; }
+  .section-mechanic { padding: 80px 48px !important; }
+  .stats-bar      { padding: 48px 48px !important; }
+  .cta-section    { padding: 80px 48px !important; }
+  .footer-main    { padding: 40px 48px !important; }
+  .nav-main       { padding: 14px 32px !important; }
+
+  .mechanics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .stats-grid     { grid-template-columns: repeat(2, 1fr) !important; }
+  .standee-grid   { grid-template-columns: 1fr !important; gap: 32px !important; padding: 40px 40px !important; }
+  .how-row2       { width: 100% !important; }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .hero-section   { padding: 110px 20px 60px !important; }
+  .section-main   { padding: 60px 20px !important; }
+  .section-mechanic { padding: 60px 20px !important; }
+  .stats-bar      { padding: 40px 20px !important; }
+  .cta-section    { padding: 64px 20px !important; }
+  .footer-main    { padding: 36px 20px !important; flex-direction: column !important; text-align: center !important; }
+
+  .hero-grid      { grid-template-columns: 1fr !important; }
+  .hero-scene-wrap { height: 420px !important; }
+  .hero-float-card { display: none !important; }
+  .hero-tagline   { top: -60px !important; font-size: 16px !important; }
+
+  .stats-grid     { grid-template-columns: repeat(2, 1fr) !important; }
+
+  .how-row1       { grid-template-columns: 1fr !important; }
+  .how-row2       { grid-template-columns: 1fr !important; width: 100% !important; }
+
+  .mechanics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  .benefit-grid   { grid-template-columns: 1fr !important; }
+  .standee-grid   { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 20px !important; }
+
+  .app-grid       { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .app-phone-wrap { justify-content: center !important; }
+
+  .nav-links-wrapper { display: none !important; }
+  .nav-cta-mobile { display: flex !important; }
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .mechanics-grid { grid-template-columns: 1fr !important; }
+  .stats-grid     { grid-template-columns: 1fr !important; }
+  .hero-scene-wrap { height: 360px !important; }
+}

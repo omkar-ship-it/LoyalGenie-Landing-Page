@@ -26,13 +26,13 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <div style={{
+    <div className="stats-bar" style={{
       background: 'rgba(26,11,75,0.4)',
       borderTop: '1px solid rgba(240,192,64,0.1)',
       borderBottom: '1px solid rgba(240,192,64,0.1)',
       padding: '48px 80px',
     }}>
-      <div style={{
+      <div className="stats-grid" style={{
         maxWidth: '1200px', margin: '0 auto',
         display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px',
       }}>

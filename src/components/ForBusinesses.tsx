@@ -54,7 +54,7 @@ const standeeFlow: { Icon: LucideIcon; label: string }[] = [
 
 export default function ForBusinesses() {
   return (
-    <section id="for-business" style={{ padding: '100px 80px' }}>
+    <section id="for-business" className="section-main" style={{ padding: '100px 80px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
@@ -103,7 +103,7 @@ export default function ForBusinesses() {
         </div>
 
         {/* Benefits grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        <div className="benefit-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
           {benefits.map((b, i) => (
             <div key={i} className="benefit-card card-glass" style={{ padding: '32px' }}>
               <div style={{
@@ -121,7 +121,7 @@ export default function ForBusinesses() {
         </div>
 
         {/* Standee showcase */}
-        <div className="card-glass" style={{
+        <div className="card-glass standee-grid" style={{
           marginTop: '60px',
           display: 'grid', gridTemplateColumns: '1.1fr 0.9fr',
           gap: '48px', alignItems: 'center', padding: '52px 60px',

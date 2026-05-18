@@ -31,12 +31,12 @@ const modules: { Icon: LucideIcon; name: string; desc: string; color: string }[]
 
 export default function AppPreview() {
   return (
-    <section style={{
+    <section className="section-main" style={{
       padding: '100px 80px',
       background: 'rgba(26,11,75,0.2)',
       borderTop: '1px solid rgba(240,192,64,0.07)',
     }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+      <div className="app-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
 
         {/* Left — modules */}
         <div>
@@ -94,7 +94,7 @@ export default function AppPreview() {
         </div>
 
         {/* Right — Phone mockup */}
-        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+        <div className="app-phone-wrap" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
           {/* Glow */}
           <div style={{
             position: 'absolute', width: '300px', height: '300px', borderRadius: '50%',

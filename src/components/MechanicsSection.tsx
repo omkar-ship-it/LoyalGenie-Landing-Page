@@ -72,7 +72,7 @@ export default function MechanicsSection() {
   const [active, setActive] = useState(4)
 
   return (
-    <section id="mechanics" style={{
+    <section id="mechanics" className="section-mechanic" style={{
       padding: '100px 80px',
       background: 'rgba(26,11,75,0.25)',
       borderTop: '1px solid rgba(240,192,64,0.07)',
@@ -101,7 +101,7 @@ export default function MechanicsSection() {
         </div>
 
         {/* 8 cards — 2 clean rows of 4 */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+        <div className="mechanics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
           {mechanics.map((m, i) => (
             <MechanicCard key={i} mechanic={m} isActive={active === i} onClick={() => setActive(i)} />
           ))}

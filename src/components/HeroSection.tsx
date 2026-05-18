@@ -22,7 +22,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="gradient-hero"
+      className="gradient-hero hero-grid hero-section"
       style={{
         minHeight: '100vh',
         display: 'grid',
@@ -110,9 +110,9 @@ export default function HeroSection() {
       </div>
 
       {/* Right — 3D Scene */}
-      <div style={{ position: 'relative', height: '600px' }}>
+      <div className="hero-scene-wrap" style={{ position: 'relative', height: '600px' }}>
         {/* Shake It & Win It tagline */}
-        <div style={{
+        <div className="hero-tagline" style={{
           position: 'absolute', top: '-84px', left: 0, right: 0,
           textAlign: 'center', zIndex: 5, pointerEvents: 'none',
         }}>
@@ -130,7 +130,7 @@ export default function HeroSection() {
         {/* LEFT SIDE CARDS */}
 
         {/* Card: top left — Double Points */}
-        <div style={{
+        <div className="hero-float-card" style={{
           position: 'absolute', top: '30px', left: '-20px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(240,192,64,0.25)', borderRadius: '16px',
@@ -147,7 +147,7 @@ export default function HeroSection() {
         </div>
 
         {/* Card: mid left — Complimentary Service */}
-        <div style={{
+        <div className="hero-float-card" style={{
           position: 'absolute', top: '240px', left: '-15px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(22,160,133,0.35)', borderRadius: '16px',
@@ -164,7 +164,7 @@ export default function HeroSection() {
         </div>
 
         {/* Card: bottom left — ₹50 off */}
-        <div style={{
+        <div className="hero-float-card" style={{
           position: 'absolute', bottom: '100px', left: '-20px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(240,192,64,0.25)', borderRadius: '16px',
@@ -183,7 +183,7 @@ export default function HeroSection() {
         {/* RIGHT SIDE CARDS */}
 
         {/* Card: top right — Free Coffee */}
-        <div style={{
+        <div className="hero-float-card" style={{
           position: 'absolute', top: '60px', right: '-10px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(107,63,212,0.35)', borderRadius: '16px',
@@ -200,7 +200,7 @@ export default function HeroSection() {
         </div>
 
         {/* Card: mid right — Free Snack */}
-        <div style={{
+        <div className="hero-float-card" style={{
           position: 'absolute', top: '240px', right: '-20px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(239,68,68,0.35)', borderRadius: '16px',
@@ -217,7 +217,7 @@ export default function HeroSection() {
         </div>
 
         {/* Card: bottom right — 10% Off Today */}
-        <div style={{
+        <div className="hero-float-card" style={{
           position: 'absolute', bottom: '80px', right: '-15px',
           background: 'rgba(26,11,75,0.88)', backdropFilter: 'blur(20px)',
           border: '1px solid rgba(251,146,60,0.35)', borderRadius: '16px',

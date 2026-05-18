@@ -34,7 +34,7 @@ export default function Navbar() {
       </div>
 
       {/* Main nav */}
-      <nav style={{
+      <nav className="nav-main" style={{
         position: 'fixed',
         top: `${BAR_HEIGHT}px`,
         left: 0, right: 0,
@@ -70,8 +70,8 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* Nav links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+        {/* Nav links — hidden on mobile */}
+        <div className="nav-links-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
           <a href="#how-it-works" style={{ color: '#8b7db5', textDecoration: 'none', fontSize: '15px', fontWeight: 500, transition: 'color 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
             onMouseLeave={e => (e.currentTarget.style.color = '#8b7db5')}>
@@ -91,6 +91,13 @@ export default function Navbar() {
             Get Started Free
           </a>
         </div>
+
+        {/* Mobile CTA — only visible on mobile */}
+        <a href="https://5ynjgqi81l5.typeform.com/to/acjV4XH4" target="_blank" rel="noopener noreferrer"
+          className="btn-gold nav-cta-mobile"
+          style={{ display: 'none', padding: '9px 18px', fontSize: '13px' }}>
+          Get Started
+        </a>
       </nav>
     </>
   )

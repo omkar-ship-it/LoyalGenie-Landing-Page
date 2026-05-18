@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer className="footer-main" style={{
       background: '#060318',
       borderTop: '1px solid rgba(240,192,64,0.08)',
       padding: '48px 80px',

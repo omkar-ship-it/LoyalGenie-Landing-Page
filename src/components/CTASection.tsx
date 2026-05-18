@@ -3,7 +3,7 @@
 
 export default function CTASection() {
   return (
-    <section id="get-started" style={{
+    <section id="get-started" className="cta-section" style={{
       padding: '120px 80px',
       position: 'relative', overflow: 'hidden',
     }}>

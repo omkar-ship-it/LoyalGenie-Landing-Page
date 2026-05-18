@@ -42,7 +42,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" style={{ padding: '100px 80px' }}>
+    <section id="how-it-works" className="section-main" style={{ padding: '100px 80px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
@@ -68,14 +68,14 @@ export default function HowItWorks() {
         </div>
 
         {/* Row 1 — 3 steps */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '24px' }}>
+        <div className="how-row1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '24px' }}>
           {steps.slice(0, 3).map((s, i) => (
             <StepCard key={i} s={s} i={i} total={3} />
           ))}
         </div>
 
         {/* Row 2 — 2 steps, centered with exact same card width as row 1 */}
-        <div style={{
+        <div className="how-row2" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '24px',
