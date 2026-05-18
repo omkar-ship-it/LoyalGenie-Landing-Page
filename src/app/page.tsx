@@ -5,6 +5,7 @@ import HowItWorks from '@/components/HowItWorks'
 import MechanicsSection from '@/components/MechanicsSection'
 import ForBusinesses from '@/components/ForBusinesses'
 import AppPreview from '@/components/AppPreview'
+import RiskFreeSection from '@/components/RiskFreeSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
@@ -19,6 +20,7 @@ export default function Home() {
         <MechanicsSection />
         <ForBusinesses />
         <AppPreview />
+        <RiskFreeSection />
         <CTASection />
       </main>
       <Footer />

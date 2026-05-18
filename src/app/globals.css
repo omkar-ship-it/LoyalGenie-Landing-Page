@@ -215,6 +215,14 @@ body {
   .app-phone-wrap { justify-content: center !important; }
 }
 
+/* Risk-free section grids */
+@media (max-width: 900px) {
+  .risk-asym-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .gains-grid { grid-template-columns: 1fr !important; }
+}
+
 /* Small mobile (≤480px) */
 @media (max-width: 480px) {
   .mechanics-grid { grid-template-columns: 1fr !important; }
