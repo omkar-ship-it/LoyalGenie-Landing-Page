@@ -2,14 +2,14 @@
 
 import {
   ShieldCheck, RefreshCw, ThumbsUp, Megaphone, Users, Award, TrendingUp,
-  Calendar, CreditCard, Package, Unlock, Check, Clock, type LucideIcon,
+  Calendar, CreditCard, Package, Unlock, Check, Clock, Star, type LucideIcon,
 } from 'lucide-react'
 
 const costs: { label: string; sub: string }[] = [
   { label: '10 minutes', sub: 'to set up your campaign' },
   { label: 'One standee', sub: 'on your counter — that\'s it' },
   { label: 'Zero tech skills', sub: 'no integrations, no developers' },
-  { label: 'Rs. 5,000 flat', sub: 'no hidden fees, no contracts' },
+  { label: 'Free for 30 days', sub: 'no credit card required' },
 ]
 
 const gains: { Icon: LucideIcon; color: string; title: string; desc: string }[] = [
@@ -40,22 +40,27 @@ const gains: { Icon: LucideIcon; color: string; title: string; desc: string }[] 
   },
   {
     Icon: TrendingUp, color: '#9b59b6',
-    title: 'Social Media Buzz',
-    desc: 'Customers share their wins on WhatsApp and Instagram Stories — organic reach you can\'t buy.',
+    title: 'Invaluable Marketing & Social Media Buzz',
+    desc: 'Customers share their wins on WhatsApp and Instagram Stories — organic reach and brand visibility you can\'t buy.',
+  },
+  {
+    Icon: Star, color: '#e74c3c',
+    title: 'World-class Marketing & Loyalty Programs',
+    desc: 'Everything a big brand runs to retain and grow customers — done for your business, without the agency price tag.',
   },
   {
     Icon: Clock, color: '#16a085',
-    title: 'Fill Your Slow Periods',
-    desc: 'Run time-targeted offers on Tuesdays, Wednesdays, Thursdays — turn your dead hours into your busiest.',
+    title: 'Pull Customers During Slow Periods',
+    desc: 'Run targeted offers on Tuesdays, Wednesdays, Thursdays — turn your quietest hours into your most profitable ones.',
   },
 ]
 
 const guarantees: { Icon: LucideIcon; label: string }[] = [
-  { Icon: ShieldCheck, label: 'Full refund if it doesn\'t work' },
-  { Icon: CreditCard,  label: 'Rs. 5,000 flat — no hidden fees' },
+  { Icon: ShieldCheck, label: 'Pay only after proof' },
+  { Icon: Calendar,    label: 'Free for 30 days' },
+  { Icon: CreditCard,  label: 'No credit card needed' },
   { Icon: Package,     label: 'Standee on your counter in 3 days' },
-  { Icon: Calendar,    label: 'Up and running in 10 minutes' },
-  { Icon: Unlock,      label: 'No questions asked, ever' },
+  { Icon: Unlock,      label: 'Cancel anytime, no questions' },
 ]
 
 export default function RiskFreeSection() {
@@ -73,17 +78,17 @@ export default function RiskFreeSection() {
             border: '1px solid rgba(240,192,64,0.25)', borderRadius: '50px',
             padding: '6px 18px', marginBottom: '20px',
           }}>
-            <span style={{ color: '#f0c040', fontSize: '13px', fontWeight: 600 }}>WORLD-CLASS. RS. 5,000. ZERO RISK.</span>
+            <span style={{ color: '#f0c040', fontSize: '13px', fontWeight: 600 }}>ZERO RISK. REAL UPSIDE.</span>
           </div>
           <h2 style={{
             fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 900,
             letterSpacing: '-1px', color: '#ffffff', lineHeight: 1.15, marginBottom: '16px',
           }}>
-            World-class Marketing &amp; Loyalty Programs.{' '}
-            <span style={{ color: '#f0c040' }}>For Rs. 5,000.</span>
+            Try it free.{' '}
+            <span style={{ color: '#f0c040' }}>Pay only when<br />you see it working.</span>
           </h2>
           <p style={{ color: '#8b7db5', fontSize: '17px', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-            Everything a big brand does to market and retain customers — loyalty programs, slow-day pulls, word-of-mouth engines — in one setup, for Rs. 5,000. If it doesn&apos;t work for any reason, full refund. No questions asked.
+            No commitment. No credit card. No leap of faith. Run LoyalGenie for 30 days, watch what happens to your regulars — and only then decide.
           </p>
         </div>
 
@@ -106,10 +111,10 @@ export default function RiskFreeSection() {
           </div>
           <div>
             <div style={{ color: '#f0c040', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '8px' }}>
-              OUR GUARANTEE
+              OUR FIRM PROMISE
             </div>
             <p style={{ color: '#ffffff', fontSize: '17px', lineHeight: 1.65, fontWeight: 500 }}>
-              Rs. 5,000 for world-class marketing your customers will actually talk about. We back it with complete conviction — if it doesn&apos;t deliver results for your business for any reason, you get every rupee back. No questions asked.
+              We only charge you after you&apos;ve seen the proof yourself. Set up your loyalty program today, watch your customers come back — and if it&apos;s not working in 30 days, you owe us absolutely nothing.
             </p>
           </div>
         </div>
